@@ -39,8 +39,11 @@ header{
 }
 
 
-nav ul li{
-    display: inline-block;
+nav ul{
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
 
 }
 
@@ -376,3 +379,40 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+@media (max-width: 500px) {
+    .habitacion{
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+    .imagenDeExposicion{
+        width: 100%;
+
+    }
+
+
+}
+
+
+
+@media (max-width: 420px) {
+    nav ul{
+        display: flex;
+        flex-direction: column;
+
+        list-style: none;
+        text-align: center;
+    }
+
+
+    nav ul li{
+
+        margin: 10px 0px;
+
+    }
+
+
+
+}

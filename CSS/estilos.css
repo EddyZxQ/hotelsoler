@@ -41,8 +41,11 @@ header{
 }
 
 
-nav ul li{
-    display: inline-block;
+nav ul{
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
 
 }
 
@@ -176,7 +179,7 @@ nav ul li a:active, a:visited{
     margin: 50px auto;
     text-align: center;
     font-family: 'Spartan', sans-serif;
-    width: 500px;
+    width: 100%;
 }
 .sobreNosotros h1{
     margin-bottom: 10px;
@@ -386,6 +389,41 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+
+
+
+@media (max-width: 430px) {
+    nav ul{
+        display: flex;
+        flex-direction: column;
+
+        list-style: none;
+        text-align: center;
+    }
+
+
+    nav ul li{
+
+        margin: 10px 0px;
+
+    }
+
+
+    .eslogan p{
+        color: black;
+        font-family: 'Spartan', sans-serif;
+        font-size: 12pt;
+    }
+
+
+    .eslogan p strong{
+        font-family: 'Dela Gothic One', cursive;
+        font-size: 26pt;
+        color: #a11fd9;
+    }
+
+
+}
 
 
 
