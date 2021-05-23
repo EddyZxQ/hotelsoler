@@ -23,79 +23,100 @@
 <body>
     <section>
 
-        <div class="formularioHabitacion">
+        <div id="formularioHabitacion">
 
-            <form method="post" action=""  id="formulario">
+            <form method="post" action="respuesta.html"  id="formulario">
 
-                <div class="datosPersonales">
 
                 <h2>Datos Personales</h2>
 
-                <label for="id_nombre">Nombre:   </label>
-                <input type="text" id="id_nombre" name="id_nombre" required>
+                <div class="contenedor-campos">
 
-
-                <label for="id_apellidos">Apellidos:  </label>
-                <input type="text" id="id_apellidos" name="id_apellidos" required>
-
-
-                <label for="id_dni">DNI:  </label>
-                <input type="text" id="id_dni" name="id_dni" required>
-
-
-                <label for="id_telefono">Telefono:  </label>
-                <input type="tel" id="id_telefono" name="id_telefono"
-                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-                       required>
-
-
-                <label for="id_email">Email:  </label>
-                <input type="email" id="id_email" name="id_email">
-
+                <label class="etiqueta-label" for="id_nombre">Nombre:   </label>
+                <input class="campo-input" type="text" id="id_nombre" name="id_nombre" maxlength="50" pattern="[A-Za-z]{2,30}" title="Introduce entre 2 y 30 letras" required>
                 </div>
 
-                <div class="datosBancarios">
+                <div class="contenedor-campos">
+
+                <label class="etiqueta-label" for="id_apellidos">Apellido:  </label>
+                <input class="campo-input" type="text" id="id_apellidos" name="id_apellidos" maxlength="80" pattern="[A-Za-z]{2,30}" title="Introduce entre 2 y 3   0 letras" required>
+                </div>
+
+                <div class="contenedor-campos">
+
+                <label class="etiqueta-label" for="id_dni">DNI:  </label>
+                <input class="campo-input" type="text" id="id_dni" name="id_dni" maxlength="9" pattern="[0-9]{8}[A-Z]{1}" title="Introduce un dato del tipo 111-111-111-L" required>
+                </div>
+
+                <div class="contenedor-campos">
+
+                <label class="etiqueta-label" for="id_telefono">Telefono:  </label>
+                <input class="campo-input" type="tel" id="id_telefono" name="id_telefono"
+                       pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+                       required>
+                </div>
+
+                <div class="contenedor-campos">
+                <label class="etiqueta-label" for="id_email">Email:  </label>
+                <input class="campo-input" type="email" id="id_email" name="id_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" >
+                </div>
+
 
                 <h2>Datos Bancarios</h2>
 
-                <label for="id_tarjetaNumero">Numero de la Tarjeta:  </label>
-                <input type="text" id="id_tarjetaNumero" name="id_tarjetaNumero" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                <div class="contenedor-campos">
 
-                <label for="id_fechadecaduciadad">Fecha de caducidad:  </label>
-                <input type="text" id="id_fechadecaduciadad" name="id_fechadecaduciadad" placeholder="MM/AA" required>
-
-                <label for="id_tarjetaTitular">Titular de la Tarjeta:  </label>
-                <input type="text" id="id_tarjetaTitular" name="id_tarjetaTitular" placeholder="NOMBRE APELLIDO" required>
-
-                <label>Emisor de la Tarjeta:  </label>
-
-                <input type="radio" name="tarjetas" id="id_mastercard" value="mastercard"/><label for="id_mastercard" class="radiolabel">MASTERCARD</label>
-
-                <input type="radio" name="tarjetas" id="id_visa" value="visa"/><label for="id_visa" class="radiolabel">VISA</label>
-
-                <input type="radio" name="tarjetas" id="id_paypal" value="paypal"/><label for="id_paypal" class="radiolabel">PAYPAL</label>
-
-                <label for="id_tarjetaCVV">CVV:  </label>
-                <input type="password" id="id_tarjetaCVV" name="id_tarjetaCVV" placeholder="XXX" required>
-
+                <label class="etiqueta-label" for="id_tarjetaNumero">Numero de la Tarjeta:  </label>
+                <input class="campo-input" type="text" id="id_tarjetaNumero" name="id_tarjetaNumero" placeholder="xxxx-xxxx-xxxx-xxxx" pattern="[0-9]{16}" required>
                 </div>
 
-                <div class="datosHabitacion">
+                <div class="contenedor-campos">
+                <label class="etiqueta-label" for="id_fechadecaduciadad">Fecha de caducidad:  </label>
+                <input class="campo-input" type="text" id="id_fechadecaduciadad" name="id_fechadecaduciadad" placeholder="MM/AA" pattern="[0-9]{4}" title="Introduce un dato del tipo XX/XX" required>
+                </div>
+
+                <div class="contenedor-campos">
+                <label class="etiqueta-label" for="id_tarjetaTitular">Titular de la Tarjeta:  </label>
+                <input class="campo-input" type="text" id="id_tarjetaTitular" name="id_tarjetaTitular" placeholder="NOMBRE APELLIDO1 APELLIDO2" pattern="[A-Za-z]{2,60}" required>
+                </div>
+
+                <div class="contenedor-multiple">
+                <label class="etiqueta-label">Emisor de la Tarjeta:  </label>
+
+                <div class="campo-radio">
+                <input type="radio" name="tarjetas" id="id_mastercard" value="mastercard"/><label for="id_mastercard" class="radiolabel">MASTERCARD</label>
+                </div>
+
+                <div class="campo-radio">
+                <input type="radio" name="tarjetas" id="id_visa" value="visa"/><label for="id_visa" class="radiolabel">VISA</label>
+                </div>
+
+                <div class="campo-radio">
+                <input type="radio" name="tarjetas" id="id_paypal" value="paypal"/><label for="id_paypal" class="radiolabel">PAYPAL</label>
+                </div>
+                </div>
+
+                <div class="contenedor-campos">
+                <label class="etiqueta-label" for="id_tarjetaCVV">CVV:  </label>
+                <input class="campo-input" type="password" id="id_tarjetaCVV" name="id_tarjetaCVV" placeholder="XXX" pattern="[0-9]{3}" required>
+                </div>
 
                 <h2>Datos Habitacion</h2>
 
-                <label for="id_ciudad">Ubicacion: </label>
-                <select name="ciudad" id="id_ciudad">
+                <div class="contenedor-campos">
+                <label class="etiqueta-label" for="id_ciudad">Ubicacion: </label>
+                <select class="campo-input" name="ciudad" id="id_ciudad">
                     <optgroup label="CIUDADES">
                         <option value="Valencia" selected>Valencia</option>
                         <option value="Barcelona">Barcelona</option>
                         <option value="Madrid">Madrid</option>
                     </optgroup>
                 </select>
+                </div>
 
-
-                <label for="id_habitacion">Tipo de habitacion: </label>
-                <select name="HABITACIONES" id="id_habitacion">
+               <div class="contenedor-campos">
+                <label class="etiqueta-label" for="id_habitacion">Tipo de habitacion: </label>
+                <select class="campo-input" name="HABITACIONES" id="id_habitacion">
                     <optgroup label="HABITACIONES">
                         <option value="Deluxe" selected>Deluxe</option>
                         <option value="Suite">Suite</option>
@@ -103,23 +124,48 @@
                         <option value="Basica">Basica</option>
                     </optgroup>
                 </select>
+                </div>
 
-               <label for="id_descuento">Codigo de descuento:  </label>
-               <input type="text" id="id_descuento" name="id_descuento">
+               <div class="contenedor-campos">
+               <label class="etiqueta-label" for="id_descuento">Codigo de descuento:  </label>
+               <input class="campo-input" type="text" id="id_descuento" pattern="[A-Za-z0-9]{7}"name="id_descuento">
+               </div>
+
+
+                <div class="contenedor-campos">
+                    <label for="id_fechainicio">Inicio Alojamiento:</label>
+
+                    <input type="date" id="id_fechainicio" name="empiezaAlojamiento"
+                           value="2021-05-31"
+                           min="2021-05-31">
+                </div>
+
+                <div class="contenedor-campos">
+                    <label for="id_fechafinal">Inicio Alojamiento:</label>
+
+                    <input type="date" id="id_fechafinal" name="terminaAlojamiento"
+                           value="2021-06-01"
+                           min="2021-06-01">
+                </div>
+
+                <div id="contenedor-precio">
+
+                    <button id="obtenerPrecio">OBTENER PRECIO</button>
+
+                    <div id="precio">
+
+
+                    </div>
+
+                </div>
 
                     <br>
 
-                    <input id="reservar" type="submit" value="Reservar"> <br>
+                    <input id="reservar" type="submit"  value="Reservar"> <br>
                     <input  id="reset" type="reset" value="Resetear"> <br>
                     <button onclick="redireccionarPaginaPrincipal()" id="cancelar" >Cancelar </button>
 
 
-                </div>
-                
-                
-                
-                
-                
             </form>
             
 
@@ -127,7 +173,8 @@
 
 
         <script src="JS/redireccionarFormulario.js"></script>
-
+        <script src="JS/validarFormulario.js"></script>
+        <script src="JS/cacularDinero.js"></script>
     </section>
 
 </body>
